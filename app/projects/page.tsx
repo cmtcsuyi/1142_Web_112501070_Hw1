@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function About() {
+export default function Projects() {
 
   return (
-    <>About</>
+    <>projects</>
   );
 }
