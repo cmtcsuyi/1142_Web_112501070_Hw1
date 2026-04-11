@@ -1,66 +1,84 @@
 import Image from "next/image";
 import Link from "next/link";
+import Menu from "../../component/Menu";
 
 export default function Hobby() {
-
-  let projectData = {
-    "1": {
-      "name": "寵物店",
-      "imageUrl": "/pfp.png"
-    },
-    "2": {
-      "name": "aaa",
-      "imageUrl": "/pfpv2.png"
-    },
-  };
-
   return (
-    <>
-      <div className="bg-white h-full w-full p-3">
+    <div className="flex min-h-screen relative">
+      
+      <Link href="/" className="sm:hidden absolute right-2 top-2 bg-white px-3 py-1">
+        返回
+      </Link>
 
-        <div className="text-[32px] text-bold">專案</div>
-        <div className="text-[16px] text-gray-600">這裡收錄</div>
-
-        <div className="grid grid-cols-3 gap-4 m-[26px]">
-
-          <div className={`bg-amber-50 rounded-2xl h-full flex justify-center items-center row-span-2
-            bg-center bg-cover relative overflow-hidden`}
-            style={{ backgroundImage: `url(${projectData["1"]["imageUrl"]})`}}
-          >
-            
-            
-            <div className="text-white bg-black/15 w-full h-[80px] flex
-                              justify-center items-center backdrop-blur-sm
-                              absolute bottom-0
-            ">
-              { projectData["1"]["name"] }
-            </div>
-          </div>
-
-          <div className={`bg-amber-50 rounded-2xl h-full flex justify-center items-center row-span-2
-            bg-center bg-cover relative overflow-hidden`}
-            style={{ backgroundImage: `url(${projectData["2"]["imageUrl"]})`}}
-          >
-
-            <div className="text-white bg-black/15 w-full h-[80px] flex
-                              justify-center items-center backdrop-blur-sm
-                              absolute bottom-0
-            ">
-              { projectData["2"]["name"] }
-            </div>
-          </div>
-
-          <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案2</div>
-          <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案3</div>
-          <div className="bg-amber-50 rounded-2xl h-full flex justify-center items-center row-span-2">專案4</div>
-          <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案5</div>
-          <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案6</div>
-          <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案7</div>
-          <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案8</div>
-          <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案9</div>
-        </div>
-
+      <div className="hidden sm:block">
+        <Menu />
       </div>
-    </>
+
+      <div className="flex-1 bg-[#d1d1d1] p-8 flex justify-center items-center">
+        <div className="w-full max-w-5xl font-[family-name:var(--font-geist-sans),system-ui,sans-serif] text-[#d1d1d1]">
+
+          {/* 上方卡片 */}
+          <div className="bg-[#1a1a1a] p-6 mb-8 border border-white/10">
+            <h2 className="text-3xl font-black mb-4 uppercase tracking-[-0.02em]">
+              My Hobbies
+            </h2>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-[#d1d1d1] w-[80px] h-[80px] rounded-full overflow-hidden animate-[spin_5s_linear_infinite]">
+                <Image src="/pfpv3.jpg" alt="pfp" width={80} height={80} />
+              </div>
+              <p className="text-lg">
+                吳梓瑄 ZiXuan Wu
+              </p>
+            </div>
+          </div>
+
+        {/* 下方三卡 */}
+        <div className="grid sm:grid-cols-3 grid-cols-2 gap-6">
+
+          <div className="bg-[#1a1a1a] p-6 text-center border border-white/10">
+            <h3 className="text-xl font-black mb-4 uppercase tracking-[-0.02em]">
+              Listening to Music
+            </h3>
+            <div className="flex justify-center gap-4">
+              <a href="https://open.spotify.com/track/6roE0mXv30oCP4m7jbBIkN?si=daa21977d4a0417f" target="_blank" className="relative w-[80px] aspect-square rounded-md overflow-hidden 
+             border border-white/10 
+             transition-all duration-300
+             hover:scale-110 hover:border-white">
+                <Image src="/YMIR.png" alt="YMIR" width={80} height={80} />
+              </a>
+              <a href="https://open.spotify.com/track/2BuJrxYKhYky20dQqTlobO?si=e050bcb5f9de4d2a" target="_blank" className="relative w-[80px] aspect-square rounded-md overflow-hidden 
+             border border-white/10 
+             transition-all duration-300
+             hover:scale-110 hover:border-white">
+                <Image src="/Keshi.png" alt="Keshi" width={80} height={80} />
+              </a>
+            </div>
+          </div>
+
+          <div className="bg-[#1a1a1a] p-6 text-center border border-white/10">
+            <h3 className="text-xl font-black mb-4 uppercase tracking-[-0.02em]">
+              Reading
+            </h3>
+            <p>Sci-fi</p>
+            <p>Crime fiction</p>
+          </div>
+
+          <div className="bg-[#1a1a1a] p-6 text-center border border-white/10">
+            <h3 className="text-xl font-black mb-4 uppercase tracking-[-0.02em]">
+              Gaming
+            </h3>
+            <p>Recently playing:</p>
+            <p>Gacha Games</p>
+            <p>Stardew Valley</p>
+            <p>Cyberpunk 2077...</p>
+          </div>
+
+    </div>
+
+  </div>
+</div>
+
+    </div>
   );
 }
