@@ -1,6 +1,8 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 export default function Menu() {
   return (
@@ -16,31 +18,34 @@ export default function Menu() {
               </div>
             </div>
 
-            <div className="text-center text-[#d1d1d1]">吳梓瑄</div>
-            <div className="text-center text-[#d1d1d1]">學藝不精 | 低精力 | 內向</div>
+            <div className="text-center text-[#d1d1d1] mt-4">吳梓瑄</div>
+            <div className="text-center text-[#d1d1d1] mt-4">學藝不精 | 低精力 | 內向</div>
 
-            <div className="flex gap-2 text-[#d1d1d1] items-center justify-center">
-              <div>社群連結</div>
-              <div>社群連結</div>
-              <div>社群連結</div>
+            <div className="flex mt-4 gap-4 text-[#d1d1d1] items-center justify-center">
+              <a href="https://github.com/cmtcsuyi" target="_blank">
+                <FaGithub size={24} />
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=112501070@g.nccu.edu.tw" target="_blank">
+                <SiGmail size={24} />
+              </a>
             </div>
 
             
 
             <Link href="/about">
-              <div className="bg-[#d1d1d1] p-[16px] rounded-md">關於我</div>
+              <div className="bg-[#d1d1d1] p-[16px] mt-4 rounded-md flex items-center justify-center">關於我</div>
             </Link>
 
             <Link href="/hobby">
-              <div className="bg-[#d1d1d1] p-[16px] mt-2 rounded-md">我的興趣</div>
+              <div className="bg-[#d1d1d1] p-[16px] mt-4 rounded-md flex items-center justify-center">我的興趣</div>
             </Link>
 
             <Link href="/test">
-              <div className="bg-[#d1d1d1] p-[16px] mt-2 rounded-md">遊戲作品</div>
+              <div className="bg-[#d1d1d1] p-[16px] mt-4 rounded-md flex items-center justify-center">遊戲作品</div>
             </Link>
 
             <Link href="/project">
-              <div className="bg-[#d1d1d1] p-[16px] mt-2 rounded-md">其他作品</div>
+              <div className="bg-[#d1d1d1] p-[16px] mt-4 rounded-md flex items-center justify-center">其他作品</div>
             </Link>
     </div>
   );

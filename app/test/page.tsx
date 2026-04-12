@@ -11,6 +11,7 @@ export default function Test() {
   const [current, setCurrent] = useState(0);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const lightRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -28,6 +29,18 @@ export default function Test() {
       if (cardRef.current) {
         cardRef.current.style.transform =
           `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+      if (lightRef.current) {
+        const percentX = (x / innerWidth) * 100;
+      
+        lightRef.current.style.background = `
+          linear-gradient(
+            120deg,
+            transparent ${percentX - 20}%,
+            rgba(255,255,255,0.2),
+            transparent ${percentX + 20}%
+          )
+        `;
       }
     };
   
@@ -156,10 +169,24 @@ export default function Test() {
                     ? "#1a1a1a"
                     : ""
                 }}
->
-                <div className="absolute bottom-0 w-full h-[80px] flex justify-center items-center text-white bg-black/30 backdrop-blur-sm">
-                  {projectList[current].name}
-                </div>
+              >
+
+                <div
+                  ref={lightRef}
+                  className="absolute inset-0 pointer-events-none transition-all duration-200"
+                  style={{
+                    background: `linear-gradient(
+                      120deg,
+                      transparent 30%,
+                      rgba(255,255,255,0.2),
+                      transparent 70%
+                    )`
+                  }}
+                />
+                  
+                  <div className="absolute bottom-0 w-full h-[80px] flex justify-center items-center text-white bg-black/30 backdrop-blur-sm">
+                    {projectList[current].name}
+                  </div>
               </div>
 
               {/* 右箭頭 */}
