@@ -17,7 +17,7 @@ export default function Menu() {
             </div>
 
             <div className="text-center text-[#d1d1d1]">吳梓瑄</div>
-            <div className="text-center text-[#d1d1d1]">學藝不精 | 低精力</div>
+            <div className="text-center text-[#d1d1d1]">學藝不精 | 低精力 | 內向</div>
 
             <div className="flex gap-2 text-[#d1d1d1] items-center justify-center">
               <div>社群連結</div>
@@ -35,7 +35,7 @@ export default function Menu() {
               <div className="bg-[#d1d1d1] p-[16px] mt-2 rounded-md">我的興趣</div>
             </Link>
 
-            <Link href="/game">
+            <Link href="/test">
               <div className="bg-[#d1d1d1] p-[16px] mt-2 rounded-md">遊戲作品</div>
             </Link>
 

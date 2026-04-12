@@ -6,13 +6,17 @@ export default function Project() {
 
   let projectData = {
     "1": {
-      "name": "寵物店",
-      "imageUrl": "/pfp.png"
+      "name": "英文電子雜誌",
+      "imageUrl": "/EMag.png"
     },
     "2": {
-      "name": "aaa",
-      "imageUrl": "/pfpv2.png"
+      "name": "今天去哪CHILL程式專題",
+      "imageUrl": "/chill.png"
     },
+    "3": {
+      "name": "遊戲介紹網站設計",
+      "imageUrl": "/zebragoweb.png"
+    }
   };
 
   return (
@@ -27,16 +31,33 @@ export default function Project() {
         <div className="bg-red-500 w-full">
           <div className="bg-[#d1d1d1] h-full w-full p-3">
 
-            <div className="text-[32px] text-bold">專案</div>
-            <div className="text-[16px] text-gray-600">這裡收錄</div>
+            {/* 上方卡片 */}
+          <div className="bg-[#1a1a1a] p-6 mb-8 border border-white/10 font-[family-name:var(--font-geist-sans),system-ui,sans-serif] text-[#d1d1d1]">
+            <h2 className="text-3xl font-black mb-4 uppercase tracking-[-0.02em]">
+              Other Works
+            </h2>
 
-            <div className="grid grid-cols-3 gap-4 m-[26px]">
+            <div className="flex items-center gap-4">
+              <div className="bg-[#d1d1d1] w-[80px] h-[80px] rounded-full overflow-hidden animate-[spin_5s_linear_infinite]">
+                <Image src="/pfpv3.jpg" alt="pfp" width={80} height={80} />
+              </div>
 
-              <div className={`bg-amber-50 rounded-2xl h-full flex justify-center items-center row-span-2
-                bg-center bg-cover relative overflow-hidden`}
+              <div>
+                <p className="text-lg">吳梓瑄 ZiXuan Wu</p>
+                <p className="text-sm text-white/60">
+                  這裡收錄我的其他作品。
+                </p>
+              </div>
+            </div>
+          </div>
+
+            <div className="grid grid-cols-2 gap-4 m-[26px]">
+
+              {/* 專案一 */}
+              <a href="https://canva.link/dj9k295lzm1cetd" target="_blank" className={`block rounded-2xl row-span-2 bg-center bg-cover relative overflow-hidden transition-all duration-300
+             hover:scale-105 hover:border-white`}
                 style={{ backgroundImage: `url(${projectData["1"]["imageUrl"]})`}}
               >
-                
                 
                 <div className="text-white bg-black/15 w-full h-[80px] flex
                                   justify-center items-center backdrop-blur-sm
@@ -44,10 +65,11 @@ export default function Project() {
                 ">
                   { projectData["1"]["name"] }
                 </div>
-              </div>
+              </a>
 
-              <div className={`bg-amber-50 rounded-2xl h-full flex justify-center items-center row-span-2
-                bg-center bg-cover relative overflow-hidden`}
+              {/* 專案二 */}
+              <a href="https://canva.link/tcmky8qglmwr1li" target="_blank" className={`block rounded-2xl h-[250px] bg-center bg-cover relative overflow-hidden transition-all duration-300
+             hover:scale-105 hover:border-white`}
                 style={{ backgroundImage: `url(${projectData["2"]["imageUrl"]})`}}
               >
 
@@ -57,18 +79,23 @@ export default function Project() {
                 ">
                   { projectData["2"]["name"] }
                 </div>
-              </div>
+              </a>
 
-              <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案2</div>
-              <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案3</div>
-              <div className="bg-amber-50 rounded-2xl h-full flex justify-center items-center row-span-2">專案4</div>
-              <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案5</div>
-              <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案6</div>
-              <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案7</div>
-              <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案8</div>
-              <div className="bg-amber-50 rounded-2xl h-40 flex justify-center items-center">專案9</div>
+              {/* 專案三 */}
+              <a href="https://cmtcsuyi.github.io/" target="_blank" className={`block rounded-2xl h-[250px] bg-center bg-cover relative overflow-hidden transition-all duration-300
+             hover:scale-105 hover:border-white`}
+                style={{ backgroundImage: `url(${projectData["3"]["imageUrl"]})`}}
+              >
+
+                <div className="text-white bg-black/15 w-full h-[80px] flex
+                                  justify-center items-center backdrop-blur-sm
+                                  absolute bottom-0
+                ">
+                  { projectData["3"]["name"] }
+                </div>
+              </a>
+
             </div>
-
           </div>
         </div>
       </div>

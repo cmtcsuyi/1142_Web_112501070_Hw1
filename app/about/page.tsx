@@ -57,8 +57,8 @@ export default function About() {
               Skills & Learning
             </h3>
             <p>TOEIC 965</p>
-            <p>UE4</p>
-            <p>French</p>
+            <p>UE4, C++, Python</p>
+            <p>Français</p>
           </div>
 
     </div>
